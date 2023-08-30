@@ -1,0 +1,25 @@
+[project]
+name = "{{ cookiecutter.project_name }}"
+version = "{{ cookiecutter.version }}"
+dependencies = []
+readme = "README.md"
+authors = [
+  {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}"},
+]
+maintainers = [
+  {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}"},
+]
+
+[project.scripts]
+{{ cookiecutter.project_name }} = "{{ cookiecutter.project_name }}.{{ cookiecutter.project_name }}:main"
+
+[project.optional-dependencies]
+dev = [
+    "spyder",
+    "black",
+    "ruff"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,4 +1,4 @@
-# cookie_python
+# {{ cookiecutter.project_name }}
 
 An example package.
 
