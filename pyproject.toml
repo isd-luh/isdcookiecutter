@@ -1,0 +1,18 @@
+[project]
+name = "cookie_python"
+version = "0.1"
+dependencies = []
+
+[project.scripts]
+cookie_python = "cookie_python.cookie_python:main"
+
+[project.optional-dependencies]
+dev = [
+    "spyder",
+    "black",
+    "ruff"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
