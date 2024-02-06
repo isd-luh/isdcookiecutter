@@ -28,6 +28,7 @@ build-backend = "hatchling.build"
 [tool.ruff]
 line-length = 100 # higher line-length since black sometimes ignores lines >88
 
+[tool.ruff.lint]
 select = [ 
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
@@ -38,12 +39,13 @@ select = [
 # only fix unsorted imports and trailing whitespace with --fix
 fixable = [ "I001", "W291" ]
 
+[tool.ruff.lint.pydocstyle]
+# add "D" to selected/fixable rules to enforce this
+convention = "numpy"
+
 [tool.ruff.format]
 # Like Black, use double quotes for strings.
 quote-style = "double"
 # Like Black, indent with spaces, rather than tabs.
 indent-style = "space"
 
-[tool.ruff.pydocstyle]
-# add "D" to selected/fixable rules to enforce this
-convention = "numpy"
