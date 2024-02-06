@@ -2,7 +2,7 @@
   "project_name": "",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "< describe your package in a few words... >",
-  "institute": "ISD",
+  "institute": "Institut für Statik und Dynamik",
   "author": "",
   "email": "",
   "version": "0.1",
