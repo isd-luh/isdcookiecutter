@@ -14,5 +14,6 @@ pages:
       - public
   script:
     - pip install -r docs/requirements.txt
+    - pip install .
     - mkdocs build -d public
     - echo $CI_PAGES_URL
