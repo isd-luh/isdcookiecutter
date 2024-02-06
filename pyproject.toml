@@ -1,0 +1,50 @@
+[project]
+name = "cookie_python"
+description = "A cookiecutter template for use at Leibniz Universität Hannover, Fakultät für Bauingenieurwesen und Geodäsie."
+version = "0.5"
+dependencies = []
+readme = "README.md"
+authors = [
+  {name = "Stefan Warnken", email = "s.warnken@isd.uni-hannover.de"},
+  {name = "Jan Heinemeyer", email = "j.heinemeyer@isd.uni-hannover.de"},
+]
+maintainers = [
+  {name = "Stefan Warnken", email = "s.warnken@isd.uni-hannover.de"},
+  {name = "Jan Heinemeyer", email = "j.heinemeyer@isd.uni-hannover.de"},
+]
+
+[project.optional-dependencies]
+dev = [
+    "nox",
+    "ruff",
+    "bump-my-version",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100 # higher line-length since black sometimes ignores lines >88
+
+[tool.ruff.lint]
+select = [ 
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I"  # isort (missing/unsorted imports)
+]
+
+# only fix unsorted imports and trailing whitespace with --fix
+fixable = [ "I001", "W291" ]
+
+[tool.ruff.lint.pydocstyle]
+# add "D" to selected/fixable rules to enforce this
+convention = "numpy"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
