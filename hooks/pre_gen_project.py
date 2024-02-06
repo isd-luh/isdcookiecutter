@@ -4,7 +4,7 @@ import sys
 
 MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 
-project_name = '{{ cookiecutter.project_name }}'
+project_name = '{{ cookiecutter.project_slug }}'
 
 if not re.match(MODULE_REGEX, project_name):
     print('ERROR: %s is not a valid Python module name (no spaces, umlauts and hyphens allowed)!' % project_name)

@@ -1,6 +1,11 @@
 {
   "project_name": "",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "< describe your package in a few words... >",
+  "institute": "ISD",
   "author": "",
   "email": "",
-  "version": "0.1"
+  "version": "0.1",
+  "use_pre_commit": "n",
+  "open_source_license": ["GNU General Public License v3", "Apache Software License 2.0", "MIT license", "BSD license", "Not open source"]
 }
