@@ -1,0 +1,18 @@
+---
+ruff:
+  stage: test
+  image: registry.gitlab.com/pipeline-components/ruff:latest
+  script: 
+    - "ruff --version"
+    - "ruff check ."
+
+pages:
+  stage: deploy
+  image: python
+  artifacts:
+    paths:
+      - public
+  script:
+    - pip install -r docs/requirements.txt
+    - mkdocs build -d public
+    - echo $CI_PAGES_URL

@@ -1,3 +1,9 @@
 __pycache__
 .spyproject
 venv/
+.nox/
+data/
+public/
+
+*.py[cod]
+*$py.class
