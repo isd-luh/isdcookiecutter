@@ -8,7 +8,7 @@ def lint(session):
     fix unsorted imports
     """
     session.install("ruff")
-    session.run("ruff", ".", "--fix")
+    session.run("ruff", "check", ".", "--fix")
     session.run("ruff", "format", ".")
 
 
