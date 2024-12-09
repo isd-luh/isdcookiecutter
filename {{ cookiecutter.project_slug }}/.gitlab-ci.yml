@@ -1,13 +1,24 @@
 ---
-ruff:
-  stage: test
+stages:
+  - linting
+  - docs
+
+ruff-format:
+  stage: linting
   image: registry.gitlab.com/pipeline-components/ruff:latest
-  script: 
-    - "ruff --version"
-    - "ruff check ."
+  script:
+    - ruff --version
+    - ruff format --check --diff
+
+ruff-check:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/ruff:latest
+  script:
+    - ruff --version
+    - ruff check
 
 pages:
-  stage: deploy
+  stage: docs
   image: python
   artifacts:
     paths:
