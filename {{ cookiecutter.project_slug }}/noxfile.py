@@ -2,13 +2,12 @@ import nox
 
 @nox.session
 def lint(session):
-    """Lint all python files with ruff.
+    """Lint and format all python files with ruff.
     see pyproject.toml for configuration
-    fix unsorted imports
     """
     session.install("ruff")
-    session.run("ruff", "format", ".")
-    session.run("ruff", ".", "--fix")
+    session.run("ruff", "format")
+    session.run("ruff", "check", "--fix")
 
 @nox.session
 def docs(session):
