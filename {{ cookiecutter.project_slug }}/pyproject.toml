@@ -30,14 +30,23 @@ line-length = 100 # higher line-length since black sometimes ignores lines >88
 
 [tool.ruff.lint]
 select = [ 
+#   "D", # PyDocStyle
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
     "F", # pyflakes
-    "I"  # isort (missing/unsorted imports)
+    "I", # isort (missing/unsorted imports)
+    "B", # Bugbear
+    "YTT", # Flake8-2020
+    "S", # flake8-bandit
+    "C4",# flake8-comprehensions
+    "F", # PyFlakes
+    "UP", # pyupgrade
+    "RUF", # ruff   
+    "TRY" # tryceratops
 ]
 
 # only fix unsorted imports and trailing whitespace with --fix
-fixable = [ "I001", "W291" ]
+fixable = [ "ALL" ]
 
 [tool.ruff.lint.pydocstyle]
 # add "D" to selected/fixable rules to enforce this
