@@ -1,5 +1,8 @@
 MIT License
 
+{{ cookiecutter.project_name }}:
+{{ cookiecutter.project_short_description }}
+
 Copyright (c) {% now 'local', '%Y' %} Leibniz Universitaet Hannover, {{ cookiecutter.institute }}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

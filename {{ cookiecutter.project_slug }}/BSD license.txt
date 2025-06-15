@@ -1,5 +1,8 @@
 BSD 3-Clause License
 
+{{ cookiecutter.project_name }}:
+{{ cookiecutter.project_short_description }}
+
 Copyright (c) {% now 'local', '%Y' %}, Leibniz Universitaet Hannover, {{ cookiecutter.institute }}
 
 Redistribution and use in source and binary forms, with or without
