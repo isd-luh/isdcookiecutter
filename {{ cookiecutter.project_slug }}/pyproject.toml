@@ -2,7 +2,6 @@
 name = "{{ cookiecutter.project_slug }}"
 description = "{{ cookiecutter.project_short_description }}"
 version = "{{ cookiecutter.version }}"
-dependencies = []
 readme = "README.md"
 authors = [
   {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}"},
@@ -10,15 +9,21 @@ authors = [
 maintainers = [
   {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}"},
 ]
+requires-python = ">=3.13"
+dependencies = [
+    "wheel>=0.45.1",
+]
 
 [project.scripts]
 {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }}:main"
 
-[project.optional-dependencies]
-dev = [
-    "nox",
-    "ruff",
-    "bump-my-version",
+[dependency-groups]
+lint = [
+    "ruff>=0.11.13",
+]
+doc = [
+    "mkdocs-material>=9.6.14",
+    "mkdocstrings[python]>=0.29.1",
 ]
 
 [build-system]
