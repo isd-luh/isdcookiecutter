@@ -1,8 +1,7 @@
 [project]
 name = "cookie_python"
 description = "A cookiecutter template for use at Leibniz Universität Hannover, Fakultät für Bauingenieurwesen und Geodäsie."
-version = "0.6"
-dependencies = []
+version = "0.7"
 readme = "README.md"
 authors = [
     { name = "Stefan Warnken", email = "s.warnken@isd.uni-hannover.de" },
@@ -12,27 +11,36 @@ maintainers = [
     { name = "Stefan Warnken", email = "s.warnken@isd.uni-hannover.de" },
     { name = "Jan Heinemeyer", email = "j.heinemeyer@isd.uni-hannover.de" },
 ]
+requires-python = ">=3.11"
+dependencies = []
 
-[project.optional-dependencies]
-dev = ["nox", "ruff", "bump-my-version"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[dependency-groups]
+lint = [
+    "ruff>=0.11.13",
+]
 
 [tool.ruff]
 line-length = 100 # higher line-length since black sometimes ignores lines >88
 
 [tool.ruff.lint]
-select = [
+select = [ 
+#   "D", # PyDocStyle
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
     "F", # pyflakes
     "I", # isort (missing/unsorted imports)
+    "B", # Bugbear
+    "YTT", # Flake8-2020
+    "S", # flake8-bandit
+    "C4",# flake8-comprehensions
+    "F", # PyFlakes
+    "UP", # pyupgrade
+    "RUF", # ruff   
+    "TRY" # tryceratops
 ]
 
 # only fix unsorted imports and trailing whitespace with --fix
-fixable = ["I001", "W291"]
+fixable = [ "ALL" ]
 
 [tool.ruff.lint.pydocstyle]
 # add "D" to selected/fixable rules to enforce this
@@ -43,3 +51,4 @@ convention = "numpy"
 quote-style = "double"
 # Like Black, indent with spaces, rather than tabs.
 indent-style = "space"
+
