@@ -107,9 +107,20 @@
 # Copyright (C) {% now 'local', '%Y' %} Leibniz Universität Hannover, 
 # {{ cookiecutter.institute }}
 {% endif %}
+"""Example module with executable function."""
 
-def main():
-    print("main function")
+
+def main() -> None:
+    """
+    Show example of main function.
+
+    Returns
+    -------
+    None
+        No result.
+
+    """
+    print("This is an example function!")
 
 if __name__ == "__main__":
     main()

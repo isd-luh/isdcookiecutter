@@ -1,7 +1,8 @@
 __pycache__
 .spyproject
-venv/
-.nox/
+.venv
+.nox
+.coverage
 data/
 public/
 

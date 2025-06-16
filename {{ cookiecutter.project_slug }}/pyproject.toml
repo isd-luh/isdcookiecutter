@@ -25,6 +25,11 @@ doc = [
     "mkdocs-material>=9.6.14",
     "mkdocstrings[python]>=0.29.1",
 ]
+test = [
+    "coverage>=7.9.1",
+    "pytest>=8.4.0",
+    "pytest-cov>=6.2.1",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -35,7 +40,7 @@ line-length = 100 # higher line-length since black sometimes ignores lines >88
 
 [tool.ruff.lint]
 select = [ 
-#   "D", # PyDocStyle
+    "D", # PyDocStyle
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
     "F", # pyflakes
@@ -63,3 +68,20 @@ quote-style = "double"
 # Like Black, indent with spaces, rather than tabs.
 indent-style = "space"
 
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**/*.py" = [
+    # at least this three should be fine in tests:
+    "S101", # asserts allowed in tests...
+    "ARG", # Unused function args -> fixtures nevertheless are functionally relevant...
+    "FBT", # Don't care about booleans as positional arguments in tests, e.g. via @pytest.mark.parametrize()
+    # The below are debateable
+    "PLR2004", # Magic value used in comparison, ...
+    "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov={{ cookiecutter.project_slug }}"
+testpaths = [
+    "tests",
+]
