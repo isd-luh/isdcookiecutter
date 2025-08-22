@@ -1,7 +1,7 @@
 [project]
 name = "cookie_python"
 description = "A cookiecutter template for use at Leibniz Universität Hannover, Fakultät für Bauingenieurwesen und Geodäsie."
-version = "0.7"
+version = "0.8"
 readme = "README.md"
 authors = [
     { name = "Stefan Warnken", email = "s.warnken@isd.uni-hannover.de" },
