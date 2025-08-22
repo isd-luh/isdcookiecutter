@@ -1,11 +1,11 @@
-# cookie-python
+# isdcookiecutter 
 
 A cookiecutter template for a well structured python project. It depends on [uv](https://docs.astral.sh/uv/) and [nox](https://nox.thea.codes/en/stable/) for management of tools and virtual enviroments.
 
 To use this template for a new project run
 
 ```bash
-cookiecutter https://gitlab.projekt.uni-hannover.de/fbg-admin/cookie-python
+cookiecutter https://github.com/isd-luh/isdcookiecutter
 ```
 
 ## How to answer the questions / configuration decisions?

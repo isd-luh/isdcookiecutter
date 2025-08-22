@@ -1,5 +1,5 @@
 [project]
-name = "cookie_python"
+name = "isdcookiecutter"
 description = "A cookiecutter template for use at Leibniz Universität Hannover, Fakultät für Bauingenieurwesen und Geodäsie."
 version = "0.8"
 readme = "README.md"
